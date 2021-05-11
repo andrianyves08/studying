@@ -73,7 +73,3 @@
     </section>
   </div>
 </main><!--Main layout-->
-
-
-
-

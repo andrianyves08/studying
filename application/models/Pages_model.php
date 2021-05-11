@@ -36,5 +36,23 @@
 		return $query->result_array();
 	}
 
+	public function send_message($message, $email, $name){
+		$this->db->trans_begin();
 
+		$data = array(
+			'message' => $message,
+			'name' => $name,
+			'email' => $email,
+		);
+
+		$this->db->insert('messages_support', $data);
+		
+		if ($this->db->trans_status() === FALSE){
+		    $this->db->trans_rollback();
+		    return false;
+		} else{
+		    $this->db->trans_commit();
+		    return true;
+		}
+	}
 }

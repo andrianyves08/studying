@@ -23,19 +23,19 @@ class Email extends CI_Controller {
         $mail->Password = '8i0uPkm+Od';
         $mail->setFrom('contact@studying.com', 'Contact us Studying.com');
         $mail->addReplyTo($email, ucwords($name));
-        $mail->addAddress('andrianyvesmacalino@gmail.com'); 
+        $mail->addAddress('consulting@andymai.org'); 
         $mail->Subject = "$subject";
         $mail->Body = "$message
-
-        Do not replay here.
-        This message is sent by $email. Using the Contact us.
-        Please replay to: $email";
+            Do not replay here.
+            This message is sent by $email. Using the Contact us.
+            Please replay to: $email
+        ";
 
         if($mail->send()){
+            $this->pages_model->send_message($message, $email, $name);
             $this->session->set_flashdata('success', 'Message Sent!');
             redirect('');
-           
-        }else{
+        } else {
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;
        }

@@ -10,11 +10,11 @@ $route['contact-us'] = 'pages/contact_us';
 
 $route['terms-and-conditions'] = 'pages/terms_and_conditions';
 $route['privacy-policy'] = 'pages/privacy_policy';
-$route['about'] = 'pages/about';
+$route['about-us'] = 'pages/about';
 $route['frequently-asked-questions'] = 'pages/faq';
 // $route['contact-us'] = 'pages/other_pages/$1';
 
-$route['get-reviews'] = 'pages/get_reviews';
+$route['our-core-values'] = 'pages/core_values';
 
 $route['default_controller'] = 'pages/index';
 
@@ -22,5 +22,3 @@ $route['(:any)'] = 'pages/posts/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
-

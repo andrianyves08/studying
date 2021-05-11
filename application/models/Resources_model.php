@@ -67,17 +67,6 @@
 		return $query->result_array();
 	}
 
-	public function get_resources_keywords($slug){
-		$this->db->select('*, keywords.name as keywords_name');
-    	$this->db->join('resources_keywords', 'resources_keywords.resource_ID = resources.id');
-    	$this->db->join('keywords', 'keywords.id = resources_keywords.keyword_ID');
-    	$this->db->where('resources.slug',  $slug);
-
-		$query = $this->db->get('resources');
-
-		return $query->result_array();
-	}
-
 	public function get_categories($id = FALSE){
 		if($id === FALSE){
 			$query = $this->db->get('category');;

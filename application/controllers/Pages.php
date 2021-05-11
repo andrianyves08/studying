@@ -5,14 +5,14 @@ class Pages extends CI_Controller {
 	public function faq(){
 		$page = 'Frequently Asked Questions';
 		$data['title'] = ucfirst($page);
-		$data['meta_title'] = 'Studying.com Frequently Asked Questions';
+		$data['meta_title'] = 'Frequently Asked Questions';
 		$data['meta_description'] = 'Studying.com Frequently Asked Questions';
 		$data['meta_keywords'] = 'Studying.com, Frequently Asked Questions';
 		$data['settings'] = $this->settings_model->get_settings();
 		$data['faqs'] = $this->pages_model->get_studying_faqs();
 		$data['categories'] = $this->pages_model->get_categories();
 
-		// $this->output->cache(720);
+		$this->output->cache(720);
 
 		$this->load->view('templates/header', $data);
         $this->load->view('templates/main_nav', $data);
@@ -24,7 +24,7 @@ class Pages extends CI_Controller {
 	public function index(){
 		$page = 'index';
 		$data['title'] = ucfirst($page);
-		// $this->output->cache(720);
+		$this->output->cache(720);
 		$data['meta_title'] = 'Studying.com';
 		$data['meta_description'] = 'A Multi-Variant learning system that specializes in dropshipping,digital marketing and creating a brand. Tailored courses specifically made according to your needs with an ongoing mission to create 1000 success stories!';
 		$data['meta_keywords'] = 'dropshipping made it easy, dropshipping, learn dropshipping online, easy dropshipping, dropshipping course, multi-varianted dropshipping course';
@@ -79,9 +79,9 @@ class Pages extends CI_Controller {
 	public function reviews(){
 		$page = 'reviews';
 		$data['title'] = ucfirst($page);
-		// $this->output->cache(720);
-		$data['meta_title'] = 'Studying.com Reviews';
-		$data['meta_description'] = 'Studying.com reviews';
+		$this->output->cache(720);
+		$data['meta_title'] = 'Reviews';
+		$data['meta_description'] = 'reviews';
 		$data['meta_keywords'] = 'studying.com reviews, reviews for studying.com';
 		$data['settings'] = $this->settings_model->get_settings();
 		$data['reviews'] = $this->reviews_model->get_reviews();
@@ -90,19 +90,35 @@ class Pages extends CI_Controller {
 		$data['total_reviews'] = $this->reviews_model->total_reviews();
 		
 		$this->load->view('templates/header', $data);
-       // $this->load->view('templates/main_nav', $data);
+       	$this->load->view('templates/main_nav', $data);
 		$this->load->view('pages/'.$page, $data);
 		$this->load->view('templates/footer');
 		$this->load->view('templates/scripts');
         
 	}
 
+	public function core_values(){
+		$page = 'our core values';
+		$data['title'] = ucfirst($page);
+		$this->output->cache(720);
+		$data['meta_title'] = 'Our Core Values';
+		$data['meta_description'] = 'Our core values';
+		$data['meta_keywords'] = 'studying.com core values';
+		$data['settings'] = $this->settings_model->get_settings();
+
+		$this->load->view('templates/header', $data);
+        $this->load->view('templates/main_nav', $data);
+		$this->load->view('pages/core_values', $data);
+		$this->load->view('templates/footer');
+		$this->load->view('templates/scripts'); 
+	}
+
 	public function career(){
 		$page = 'career';
 		$data['title'] = ucfirst($page);
-		// $this->output->cache(720);
-		$data['meta_title'] = 'Studying.com career';
-		$data['meta_description'] = 'Studying.com career';
+		$this->output->cache(720);
+		$data['meta_title'] = 'Career';
+		$data['meta_description'] = 'Career';
 		$data['meta_keywords'] = 'studying.com career, career for studying.com';
 		$data['settings'] = $this->settings_model->get_settings();
 		$data['pages'] = $this->settings_model->get_pages(8);
@@ -112,24 +128,23 @@ class Pages extends CI_Controller {
 		$this->load->view('pages/'.$page, $data);
 		$this->load->view('templates/footer');
 		$this->load->view('templates/scripts');
-        
 	}
 
 	public function resources(){
 		$page = 'resources';
 		$data['title'] = ucfirst($page);
-		// $this->output->cache(720);
+		$this->output->cache(720);
 		$data['settings'] = $this->settings_model->get_settings();
-		$data['meta_title'] = 'Studying.com Resources';
+		$data['meta_title'] = 'Resources';
 		$data['meta_description'] = 'Studying.com resources where you can learn and help you to grow your dropshipping business';
-		$data['meta_keywords'] = 'studying.com reviews, reviews for studying.com';
+		$data['meta_keywords'] = 'studying.com resources, resources for studying.com';
 		$data['all_resources'] = $this->resources_model->get_resources_by_slug(5, 0, FALSE, 3);
 		$data['resources_categories'] = $this->resources_model->get_resources_categories();
 		$data['categories'] = $this->resources_model->get_categories();
 		$data['types'] = $this->resources_model->get_type();
 
 		$this->load->view('templates/header', $data);
-        //$this->load->view('templates/main_nav', $data);
+        $this->load->view('templates/main_nav', $data);
 		$this->load->view('pages/'.$page, $data);
 		$this->load->view('templates/footer');
 		$this->load->view('templates/scripts');
@@ -138,19 +153,18 @@ class Pages extends CI_Controller {
 	public function posts($slug){
 		$page = 'post';
 		$data['title'] = ucwords($page);
-		// $this->output->cache(720);
+		$this->output->cache(720);
 		$data['settings'] = $this->settings_model->get_settings();
 		$data['content'] = $this->resources_model->get_resources_by_slug(NULL, NULL, $slug, 3);
 		if(!$data['content']){
 			show_404();
 		}
 		$data['categories'] = $this->resources_model->get_resources_categories($slug);
-		$data['keywords'] = $this->resources_model->get_resources_keywords($slug);
 		$data['other_articles'] = $this->resources_model->get_other_resources($slug);
 		$data['files'] = $this->resources_model->get_files($slug);
 		$data['meta_title'] = $data['content']['title'];
-		$data['meta_description'] = substr($data['content']['description'], 0, 140);
-		$data['meta_keywords'] = $this->resources_model->get_resources_keywords($slug);
+		$data['meta_description'] = $data['content']['meta_description'];
+		$data['meta_keywords'] = $data['content']['meta_keywords'];
 
 		$this->load->view('templates/header', $data);
         $this->load->view('templates/main_nav', $data);
@@ -163,7 +177,7 @@ class Pages extends CI_Controller {
 	public function about(){
 		$page = 'about';
 		$data['title'] = ucfirst($page);
-		// $this->output->cache(720);
+		$this->output->cache(720);
 		$data['settings'] = $this->settings_model->get_settings();
 		$data['meta_title'] = $data['title'];
 		$data['meta_description'] = 'Studying.com About Us';
@@ -181,7 +195,7 @@ class Pages extends CI_Controller {
 	public function terms_and_conditions(){
 		$page = 'terms and conditions';
 		$data['title'] = ucfirst($page);
-		// $this->output->cache(720);
+		$this->output->cache(720);
 		$data['settings'] = $this->settings_model->get_settings();
 		$data['meta_title'] = $data['title'];
 		$data['meta_description'] = 'Studying.com Terms and Conditions';
@@ -199,7 +213,7 @@ class Pages extends CI_Controller {
 	public function privacy_policy(){
 		$page = 'privacy policy';
 		$data['title'] = ucfirst($page);
-		// $this->output->cache(720);
+		$this->output->cache(720);
 		$data['settings'] = $this->settings_model->get_settings();
 		$data['meta_title'] = $data['title'];
 		$data['meta_description'] = 'Studying.com Privacy Policy';
@@ -246,19 +260,13 @@ class Pages extends CI_Controller {
 
 		foreach($posts as $post){
 			$output .= '<div class="row justify-content-center post_'.$this->input->post('type').'">
-							<div class="col-lg-4 mb-4 view overlay zoom">
+							<div class="col-lg-6 mb-4 view overlay zoom">
 								<img src="https://app.studying.com/assets/img/blogs/'.$post['banner'].'" class="img-fluid z-depth-1-half img-id-2" alt="">
 							</div>
-							<div class="col-lg-3 mb-4">
+							<div class="col-lg-4 mb-4">
 								<h6 class="h6 indigo-text">'.ucwords($post['type_name']).'</h6>
 								<h3 class="customfont_header">'.ucwords($post['title']).'</h3>
-								<p class="font-weight-bold h4">';
-						if(strlen($post['description']) > 80){
-			$output .=		substr(ucfirst($post['description']), 0, 80);
-						} else {
-			$output .=		ucfirst($post['description']);
-						} 
-			$output .=			'</p>
+								<p>'.substr(ucfirst(strip_tags($post['content'])), 0, 300).'...</p>
 								<a href="'.base_url('./'.$post['slug']).'">Read More <i class="fas fa-angle-double-right ml-1"></i></a>
 								<p class="mt-auto">'.date("F d, Y", strtotime($post['timestamp'])).'</p>
 							</div>

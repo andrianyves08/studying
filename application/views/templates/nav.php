@@ -34,7 +34,7 @@
   <div class="view">
     <div class="container view">
       <div class="row align-items-center view justify-content-center">
-        <div class="col-lg-6 col-md-12 col-sm-12 wow text-center fadeInLeft">
+        <div class="col-lg-6 col-md-12 col-sm-12 wow text-center fadeInLeft d-none d-xl-block d-lg-block">
           <div class="d-flex">    
             <img src="<?php echo base_url();?>assets/img/logo-1.png" class="img-fluid wow bounceOutUp slower" alt="" style="height: 90px;">
             <picture>
@@ -49,7 +49,7 @@
         <div class="col-lg-6 col-md-12 col-sm-12 wow fadeInRight text-white text-right">
           <h1 class="customfont_header mb-4 nav_text"> <span>Learn </span> <span class="font-weight-bold">DROPSHIPPING<br>MADE EASY</span><span> FOR YOU.</span></h1>
           <p class="mb-4 pb-2 nav_text">Book a FREE 45 minute strategy session NOW!</p>
-          <a target="_blank" class="custom_button btn mb-4" href="https://calendly.com/learn-ecom/45m-discovery-session-free">Book a CALL
+          <a target="_blank" class="custom_button btn mb-4" href="https://calendly.com/studyingofficial/45m-strategy-session">Book a CALL
           <i class="fas fa-phone ml-2"></i></a>
         </div>
       </div>

@@ -1,31 +1,27 @@
 <main>
-  <div class="container-fluid">
+  <div class="container-fluid mt-5">
     <section>
-      <div class="row justify-content-center">
-        <div class="col-lg-8"> 
-          <div class="row">
-            <div class="col-md-6 mx-auto wow fadeInLeft">
-              <h2 class="text-left customfont_header font-weight-bold">Multi-Variant Learning</h2>
-              <p class="text-left pt-2 customfont">A short introduction on how ANYONE can easily scale a business from 0 to 10K in months by following a proven and tested learning platform.
-              </p>
-              <hr>
-              <p class="text-left pt-2">Andy Mai presents a short video on how to start and succeed with your online business!</p>
-              <p class="mb-0"><strong>1. Freedom</strong> - say NO to the 9-5 rat race</p>
-              <p class="mb-0"><strong>2. Opportunity</strong> - NOW is the best time to start</p>
-              <p class="mb-0"><strong>3. ​Machinery</strong> - Magnificent and proven BLUEPRINT</p>
-              <p class="mb-0"><strong>4. Automation</strong> - Copy & Paste System</p>
-              <a class="custom_button btn btn-md ml-0 mt-4" href="https://www.learn-ecom.com/free" role="button" target="_blank">Watch Now for FREE<i class="fas fa-play ml-2"></i></a>
+      <div class="row mt-5 justify-content-center align-items-center">
+        <div class="col-lg-5 wow fadeInLeft">
+            <h2 class="text-left customfont_header font-weight-bold">Multi-Variant Learning</h2>
+            <p class="text-left pt-2 customfont">A short introduction on how ANYONE can easily scale a business from 0 to 10K in months by following a proven and tested learning platform.
+            </p>
+            <hr>
+            <p class="text-left pt-2">Andy Mai presents a short video on how to start and succeed with your online business!</p>
+            <p class="mb-0"><strong>1. Freedom</strong> - say NO to the 9-5 rat race</p>
+            <p class="mb-0"><strong>2. Opportunity</strong> - NOW is the best time to start</p>
+            <p class="mb-0"><strong>3. ​Machinery</strong> - Magnificent and proven BLUEPRINT</p>
+            <p class="mb-0"><strong>4. Automation</strong> - Copy & Paste System</p>
+             <a target="_blank" class="custom_button btn mb-4" href="https://go.studying.com/studying-website"><i class="fas fa-play mr-2"></i>Watch Full Movie</a>
+        </div><!--Column-->
+        <div class="col-lg-3 text-center wow fadeInRight overlay zoom view align-self-center">
+          <a id="play" data-toggle="modal" data-target="#homepage_video">
+            <div class="view overlay zoom rounded" style="cursor: pointer;">
+              <img src="<?php echo base_url();?>assets/img/gif.gif" class="rounded img-fluid" tabindex="0">
             </div>
-            <div class="col-md-6 mx-auto wow fadeInRight">
-              <a id="play" data-toggle="modal" data-target="#homepage_video">
-                <div class="view overlay zoom rounded" style="cursor: pointer;">
-                  <img src="//www.learn-ecom.com/hosted/images/95/93850cb7da4d8c99c4fdb399a33b84/Opt-5-NEW.gif" class="rounded img-fluid" tabindex="0">
-                </div>
-              </a>
-            </div>
-          </div>
+          </a>
         </div>
-      </div>
+      </div><!--Row -->
     </section>
   </div><!--Container-->
   <div class="modal fade" id="homepage_video" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -71,7 +67,7 @@
             </h4>
             <h4 class="h3 mb-2 d-flex">
               <i class="fas fa-check blue-text"></i>
-              <span class="d-inline-block count-up ml-2 customfont_header font-weight-bold" data-from="0" data-to="300" data-time="2000">36</span>
+              <span class="d-inline-block count-up ml-2 customfont_header font-weight-bold" data-from="0" data-to="300" data-time="2000">37</span>
               <p class="ml-2">Success Stories</p>
             </h4>
             <h4 class="h3 mb-2 d-flex">
@@ -187,7 +183,7 @@
                 <div class="row flex-column-reverse flex-sm-row text-center">
                   <div class="col-md-6">
                     <h3 class="customfont_header font-weight-bold"><?php echo ucwords($resource['title']); ?></h3>
-                    <p class=""><?php echo ucfirst($resource['description']); ?></p>
+                    <p class=""><?php echo substr(ucfirst(strip_tags($resource['content'])), 0, 300); ?>...</p>
                     <p class="card-text mt-auto"><?php echo date("F d, Y", strtotime($resource['timestamp']));?></p>
                     <br>
                     <div>
@@ -196,7 +192,7 @@
                   </div>
                   <div class="col-md-6">
                     <div class="view overlay z-depth-1">
-                      <img class="img-fluid img-id-2" alt="">
+                      <img class="img-fluid img-id-2" alt="<?php echo ucfirst($resource['title']); ?>" src="https://app.studying.com/assets/img/blogs/<?php echo $resource['banner']; ?>">
                       <div class="mask rgba-white-light"></div>
                     </div>
                   </div><!--Grid column-->
@@ -211,13 +207,13 @@
                 <div class="row text-center">
                   <div class="col-md-6">
                     <div class="view overlay z-depth-1">
-                      <img src="https://app.studying.com/assets/img/blogs/<?php echo $resource['banner']; ?>" class="img-fluid img-id-2" alt="">
+                      <img src="https://app.studying.com/assets/img/blogs/<?php echo $resource['banner']; ?>" class="img-fluid img-id-2" alt="<?php echo ucfirst($resource['title']); ?>">
                       <div class="mask rgba-white-light"></div>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <h3 class="customfont_header font-weight-bold"><?php echo ucwords($resource['title']); ?></h3>
-                    <p class=""><?php echo ucfirst($resource['description']); ?></p>
+                    <p class=""><?php echo substr(ucfirst(strip_tags($resource['content'])), 0, 300); ?>...</p>
                     <p class="card-text"><?php echo date("F d, Y", strtotime($resource['timestamp']));?></p>
                     <br>
                     <div>
@@ -291,7 +287,7 @@
             </div>
             <div class="col-md-6 wow fadeInUp mb-4">
               <div class="view overlay zoom rounded z-depth-1-half">
-                <img src="<?php echo base_url();?>assets/img/Andy_Mai-1024x562.jpg" class="rounded img-fluid img-id-2" tabindex="0">
+                <img src="<?php echo base_url();?>assets/img/andy1.jpg" class="rounded img-fluid img-id-2" tabindex="0">
               </div>
             </div>
           </div>
@@ -302,7 +298,7 @@
           <div class="row">
             <div class="col-md-6 wow fadeInUp mb-4">
               <div class="view overlay zoom rounded z-depth-1-half">
-                <img src="<?php echo base_url();?>assets/img/Andy_Mai-1024x562.jpg" class="rounded img-fluid img-id-2" tabindex="0">
+                <img src="<?php echo base_url();?>assets/img/andy4.jpg" class="rounded img-fluid img-id-2" tabindex="0">
               </div>
             </div>
             <div class="col-md-6 mx-auto wow fadeInUp">
@@ -328,7 +324,7 @@
             </div>
             <div class="col-md-6 wow fadeInUp mb-4">
               <div class="view overlay zoom rounded z-depth-1-half">
-                <img src="<?php echo base_url();?>assets/img/Andy_Mai-1024x562.jpg" class="rounded img-fluid img-id-2" tabindex="0">
+                <img src="<?php echo base_url();?>assets/img/andy2.jpg" class="rounded img-fluid img-id-2" tabindex="0">
               </div>
             </div>
           </div>
@@ -340,7 +336,7 @@
     <div class="container-fluid">
       <div class="row justify-content-center wow fadeInUp">
         <div class="col-md-4">
-          <h2 class="text-center p-3 customfont_header font-weight-bold text-white mb-4" style="border-radius: 15px;background-image: linear-gradient(46deg, #3965af 0%, #4599d3 100%);">Not Enough?</h2>
+          <h2 class="text-center p-3 customfont_header font-weight-bold text-white mb-4" style="border-radius: 15px;background-image: linear-gradient(46deg, #3965af 0%, #4599d3 100%);">Want More?</h2>
         </div>
       </div>
       <div class="row justify-content-center wow fadeInUp">

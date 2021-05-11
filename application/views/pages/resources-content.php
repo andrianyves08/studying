@@ -1,8 +1,8 @@
-<main class="mt-5 pt-5">
-<div class="container">
-  <section class="mt-4">
-    <div class="row">
-      <div class="col-md-8 mb-4">
+<main class="pt-5 mx-lg-5 mt-5">
+<div class="container-fluid">
+  <section>
+    <div class="row justify-content-center">
+      <div class="col-lg-6 mb-4">
         <div class="card mb-4 wow fadeIn">
           <img src="https://app.studying.com/assets/img/blogs/<?php echo $content['banner']; ?>" class="img-fluid post-image" style="height: 300px;">
         </div>
@@ -11,24 +11,20 @@
             <p class="h5 my-4"><?php echo ucwords($content['title']); ?></p>
             <?php echo $content['content']; ?>
             <?php foreach ($files as $file) { ?>
-              <a class="btn btn-primary btn-sm" href="http://localhost/studying/assets/img/resources/<?php echo $file['file']; ?>" download><?php echo pathinfo($file['file'], PATHINFO_FILENAME); ?></a>
+              <a class="btn btn-primary btn-sm" href="https://app.studying.com/assets/img/resources/<?php echo $file['file']; ?>" download><?php echo pathinfo($file['file'], PATHINFO_FILENAME); ?></a>
             <?php } ?> 
           </div>
         </div>
         <?php foreach ($categories as $category) { ?>
           <span class="badge badge-pill badge-secondary"><i class="fas fa-tag"></i> <?php echo strtolower($category['name']); ?></span>
         <?php } ?> 
-        <?php foreach ($keywords as $keyword) { ?>
-          <span class="badge badge-pill badge-secondary"><i class="fas fa-tag"></i> <?php echo strtolower($keyword['name']); ?></span>
-        <?php } ?> 
       </div><!--Column-->
-      <div class="col-md-4 mb-4">
+      <div class="col-lg-4 mb-4">
         <div class="card mb-4 wow fadeIn" style="background-image: linear-gradient(46deg, #3965af 0%, #4599d3 100%);">
           <div class="card-body text-white text-center">
             <h4 class="mb-4 customfont_header text-white font-weight-bold">Try Now Studying.com</h4>
-            <p>Your ultimate guide learning dropshipping.</p>
-            <p class="mb-4">Teaching You a detailed steps for making your first selling dropshipping store.</p>
-            <a target="_blank" class="custom_button btn btn-sm mb-4" href="https://calendly.com/learn-ecom/45m-discovery-session-free">Book a CALL
+            <p>Join Us Today!  Our program is tailored to fit anyone who wanted to learn and start their dropshipping business.  Start making money at the comfort of your home and at your own terms and time.</p>
+            <a target="_blank" class="custom_button btn btn-sm mb-4" href="https://calendly.com/studyingofficial/45m-strategy-session">Book a CALL
               <i class="fas fa-phone ml-2"></i></a>
             </a>
           </div>
@@ -50,7 +46,7 @@
                   <?php echo date("F d, Y", strtotime($other_article['timestamp']));?>
                 </div>
               </li>
-             <?php } } ?>
+            <?php } } ?>
             </ul>
           </div><!--Card Body-->
         </div><!--Card-->
@@ -60,6 +56,6 @@
 </div><!--Container-->
 </main>
 <script type="text/javascript">
-  $("img").addClass("img-fluid");
-  $("img").parent('span').removeAttr('style');
+  $("img").addClass("img-fluid").removeAttr('width').removeAttr('height');
+  $("img").closest('span').removeAttr('style');
 </script>
