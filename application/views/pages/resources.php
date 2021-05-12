@@ -77,7 +77,8 @@
               </div>
               <a href="<?php echo base_url('./'.$resources_category['slug']);?>">
                 <div class="col-md-4 mb-4">
-                  <h6 class="indigo-text"><?php echo ucwords($resources_category['type_name']); ?></h6>
+                  <a href="<?php echo base_url('./'.$resources_category['slug']);?>">
+                    <h6 class="indigo-text"><?php echo ucwords($resources_category['type_name']); ?></h6></a>
                   <h2 class="customfont_header"><?php echo ucwords($resources_category['title']); ?></h2>
                   <p><?php echo substr(ucfirst(strip_tags($resources_category['content'])), 0, 300); ?>...</p>
                   <a href="<?php echo base_url('./'.$resources_category['slug']);?>">Read More <i class="fas fa-angle-double-right ml-1"></i></a>

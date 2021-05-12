@@ -263,6 +263,7 @@ class Pages extends CI_Controller {
 							<div class="col-lg-6 mb-4 view overlay zoom">
 								<img src="https://app.studying.com/assets/img/blogs/'.$post['banner'].'" class="img-fluid z-depth-1-half img-id-2" alt="">
 							</div>
+							<a href="'.base_url('./'.$post['slug']).'">
 							<div class="col-lg-4 mb-4">
 								<h6 class="h6 indigo-text">'.ucwords($post['type_name']).'</h6>
 								<h3 class="customfont_header">'.ucwords($post['title']).'</h3>
@@ -270,6 +271,7 @@ class Pages extends CI_Controller {
 								<a href="'.base_url('./'.$post['slug']).'">Read More <i class="fas fa-angle-double-right ml-1"></i></a>
 								<p class="mt-auto">'.date("F d, Y", strtotime($post['timestamp'])).'</p>
 							</div>
+							</a>
 						</div>';
 		}
 		echo $output;

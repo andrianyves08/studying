@@ -49,7 +49,7 @@
         <div class="col-lg-6 col-md-12 col-sm-12 wow fadeInRight text-white text-right">
           <h1 class="customfont_header mb-4 nav_text"> <span>Learn </span> <span class="font-weight-bold">DROPSHIPPING<br>MADE EASY</span><span> FOR YOU.</span></h1>
           <p class="mb-4 pb-2 nav_text">Book a FREE 45 minute strategy session NOW!</p>
-          <a target="_blank" class="custom_button btn mb-4" href="https://calendly.com/studyingofficial/45m-strategy-session">Book a CALL
+          <a target="_blank" class="custom_button btn mb-4" href="https://calendly.com/studyingofficial/45m-discovery-session-free?month=2021-05">Book a CALL
           <i class="fas fa-phone ml-2"></i></a>
         </div>
       </div>

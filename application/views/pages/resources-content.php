@@ -24,7 +24,7 @@
           <div class="card-body text-white text-center">
             <h4 class="mb-4 customfont_header text-white font-weight-bold">Try Now Studying.com</h4>
             <p>Join Us Today!  Our program is tailored to fit anyone who wanted to learn and start their dropshipping business.  Start making money at the comfort of your home and at your own terms and time.</p>
-            <a target="_blank" class="custom_button btn btn-sm mb-4" href="https://calendly.com/studyingofficial/45m-strategy-session">Book a CALL
+            <a target="_blank" class="custom_button btn btn-sm mb-4" href="https://calendly.com/studyingofficial/45m-discovery-session-free?month=2021-05">Book a CALL
               <i class="fas fa-phone ml-2"></i></a>
             </a>
           </div>
